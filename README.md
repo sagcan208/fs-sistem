@@ -52,3 +52,23 @@ volume = get_volume("ETHUSDT")
 
 Both functions accept optional `symbol` and `api_key` parameters if you want to
 specify them directly.
+
+## Market Screener
+
+The `scanner/market_screener.py` module implements a basic market
+scanning routine inspired by the four-layer early detection system.
+It fetches 24‑hour ticker data for all Binance pairs and applies
+simple filters for volume, price change percentage and RSI. The module
+returns coins that appear overbought or oversold according to the
+14‑period RSI indicator.
+
+Run it directly to print detected anomalies:
+
+```bash
+python scanner/market_screener.py
+```
+
+The other modules in the `scanner` package (`pattern_ai.py`,
+`onchain_radar.py` and `sentiment_sniper.py`) provide minimal
+placeholders that demonstrate how additional layers could be added in
+the future.
